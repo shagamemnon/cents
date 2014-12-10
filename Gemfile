@@ -29,6 +29,11 @@ gem 'spring',        group: :development
 # Foundation for mobile first development
 gem 'foundation-rails'
 
+# Rspec testing
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
