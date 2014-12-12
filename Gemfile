@@ -41,6 +41,9 @@ group :development do
   gem 'binding_of_caller'
 end
 
+# Logging in
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
