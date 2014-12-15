@@ -45,7 +45,10 @@ end
 gem 'devise'
 
 # ENV variables
-gem "figaro", '~> 0.7.0'
+gem 'figaro', '~> 0.7.0'
+
+# Facebook Sign in
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
