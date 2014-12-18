@@ -11,10 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215231836) do
+ActiveRecord::Schema.define(version: 20141217210329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charities", force: true do |t|
+    t.string   "name"
+    t.string   "mission"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "investments", force: true do |t|
+    t.integer  "amount"
+    t.integer  "duration"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.integer  "monetary_goal"
+    t.integer  "user_id"
+    t.integer  "charity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "short_desc"
+    t.text     "long_desc"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -25,6 +51,11 @@ ActiveRecord::Schema.define(version: 20141215231836) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
