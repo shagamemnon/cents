@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+  <div class="small-4 columns">
+    <%= image_tag(@user.image) %>
+  </div>
+  <div class="small-8 columns">
+    <h6><%= @user.first_name %></h6>
+  </div>
+</div>
+
