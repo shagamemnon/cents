@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-
+    @charity_projects = Project.all
   end
 
   def show
