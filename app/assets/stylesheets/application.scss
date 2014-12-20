@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+.card {
+   margin: 0.4rem 0.22rem 0.4rem 0.22rem;
+   background: white;
+   color: #333333 ;
+   padding: 0;
+   max-width: 600px;
+ }
+
+.card.card-bottom {
+  margin-top: 1rem;
+  border-top: 1px solid #CCC;
+  max-width: 600px;
+}
+
+.th.charity {
+  max-height: 1.9375rem;
+  margin: 0;
+}
+
+.th.extra-small {
+  max-height: 50%;
+  margin-top: 1px;
+}
+
+.th {
+  max-height: 90%;
+  margin-bottom: 0rem;
+  padding-top: 0.515rem;
+  padding-bottom: 0.5875rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  right: 0;
+}
+
+.small-push-2 {
+   position: relative;
+   left: 14.66667%;
+   right: auto;
+ }
+
+  .large-push-2 {
+   position: relative;
+   left: 11.66667%;
+   right: auto;
+ }
+
+   .medium-push-2 {
+   position: relative;
+   left: 11.66667%;
+   right: auto;
+ }

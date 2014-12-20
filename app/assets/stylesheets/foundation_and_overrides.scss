@@ -1028,7 +1028,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-media-classes: $include-html-classes;
 
 // We use this to set the progress bar height
-// $progress-bar-height: rem-calc(25);
+$progress-bar-height: rem-calc(17);
 // $progress-bar-color: $vapor  ;
 
 // We use these to control the border styles
@@ -1039,7 +1039,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control the margin & padding
 // $progress-bar-pad: rem-calc(2);
-// $progress-bar-margin-bottom: rem-calc(10);
+$progress-bar-margin-bottom: rem-calc(30);
 
 // We use these to set the meter colors
 // $progress-meter-color: $primary-color;
