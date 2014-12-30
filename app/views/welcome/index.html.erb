@@ -7,172 +7,50 @@
     <%= link_to 'How It Works', howitworks_path, class: 'button radius tiny' %>
   </div>
 </div>
-<div class="card small-offset-1-1">
-    <div class="row">
-        <div class="small-9 medium-8 large-8 columns">
-           <header>
-                 <h4 class="small"><strong>67¢ per day</strong></h4>
-           </header>
-               <h5 class="small">Frank’s building a hand washing station for a Liberian community. 8 characters.</h5>
-       </div>
+<% @projects.each do |project| %>
+    <div class="cards-container">
+        <div class="card">
+            <div class="row">
+                <div class="small-9 half medium-8 large-8 columns">
+                    <h4 class="small"><strong><%= project.title %></strong></h4>
+                    <h5 class="small"><%= project.short_desc %></h5>
+                </div>
 
-        <div class="small-3 columns">
-            <span class="right">
-                <a class="th" href="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/1026016_10200117998655831_1372096621_o.jpg">
-                    <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/1026016_10200117998655831_1372096621_o-th.jpg">
-                </a>
-            </span>
-        </div>
-    </div>
+                <div class="small-3 columns">
+                    <span class="right">
+                        <%= image_tag(project.user.image) %>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <span class="right">
+                        <a href="#" class="th projicon">
+                            <img src="http://placehold.it/30x30&amp;text=[img]">
+                            <h6 class="project text-center"><strong>$12</strong></h6>
+                        </a>
+                    </span>
 
-    <div class="row">
-        <div class="small-block-grid-12 small-pull-1 medium-pull-1 large-pull-1">
-            <span class="right">
-                <a class="th" href="#">
-                    <img src="#">
-                </a>
-            </span>
-
-            <div class="progress small-9 medium-10 large-10 small-push-2 medium-push-2 large-push-2 success primary color radius round">
-                <span class="meter" style="width: 70%">
-                </span>
-                    <ul class="inline-list small-pull-1 medium-push-2 large-push-2">
-                        <li class="left"><h6 class="small"><strong>77%</strong> Funded</h6></li>
-                        <li class="left"><h6 class="small"><strong>2</strong> Investors</h6></li>
-                    </ul>
+                    <div class="progress small-10 medium-11 large-11 success primary color radius round">
+                        <span class="meter" style="width: 70%">
+                        </span>
+                        <ul class="inline-list small-pull-1 medium-push-2 large-push-2 columns">
+                            <li class="left"><h6 class="small text-center">Investors<br><strong>2</strong></h6></li>
+                            <li class="left"><h6 class="small text-center">Funded<br><strong>77%</strong></h6></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <div class="row large">
+                    <div class="small-3 medium-3 large-3 columns">
+                        <a class="th charity" href="#">
+                            <img src="http://placehold.it/50x30&amp;text=[img]">
+                        </a>
+                    </div>
+                    <a href="#" class="button success right tiny corner-button">Join Project →  </a>
+                </div>
             </div>
         </div>
     </div>
-
-<!--
-    <div class="row small">
-       <div class="small-12 columns">
-            <span class="right"><h6><small><strong>$12</strong></small></h6></span>
-       </div>
-   </div>
--->
-
-    <div class="card-bottom">
-        <div class="row large">
-            <div class="small-3 medium-3 large-3 columns">
-                <a class="th charity" href="#">
-                    <img src="http://placehold.it/48x28&amp;text=[img]">
-                </a>
-            </div>
-                <a href="#" class="button success right tiny corner-button">Join Project →  </a>
-        </div>
-    </div>
-</div>
-<div class="card small-offset-1-1">
-    <div class="row">
-        <div class="small-9 medium-8 large-8 columns">
-           <header>
-                 <h4 class="small"><strong>67¢ per day</strong></h4>
-           </header>
-               <h5 class="small">Frank’s building a hand washing station for a Liberian community. 8 characters.</h5>
-       </div>
-
-        <div class="small-3 columns">
-            <span class="right">
-                <a class="th" href="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/1026016_10200117998655831_1372096621_o.jpg">
-                    <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/1026016_10200117998655831_1372096621_o-th.jpg">
-                </a>
-            </span>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="small-block-grid-12 small-pull-1 medium-pull-1 large-pull-1">
-            <span class="right">
-                <a class="th" href="#">
-                    <img src="#">
-                </a>
-            </span>
-
-            <div class="progress small-9 medium-10 large-10 small-push-2 medium-push-2 large-push-2 success primary color radius round">
-                <span class="meter" style="width: 70%">
-                </span>
-                    <ul class="inline-list small-pull-1 medium-push-2 large-push-2">
-                        <li class="left"><h6 class="small"><strong>77%</strong> Funded</h6></li>
-                        <li class="left"><h6 class="small"><strong>2</strong> Investors</h6></li>
-                    </ul>
-            </div>
-        </div>
-    </div>
-
-<!--
-    <div class="row small">
-       <div class="small-12 columns">
-            <span class="right"><h6><small><strong>$12</strong></small></h6></span>
-       </div>
-   </div>
--->
-
-    <div class="card-bottom">
-        <div class="row large">
-            <div class="small-3 medium-3 large-3 columns">
-                <a class="th charity" href="#">
-                    <img src="http://placehold.it/48x28&amp;text=[img]">
-                </a>
-            </div>
-                <a href="#" class="button success right tiny corner-button">Join Project →  </a>
-        </div>
-    </div>
-</div>
-<div class="card small-offset-1-1">
-    <div class="row">
-        <div class="small-9 medium-8 large-8 columns">
-           <header>
-                 <h4 class="small"><strong>67¢ per day</strong></h4>
-           </header>
-               <h5 class="small">Frank’s building a hand washing station for a Liberian community. 8 characters.</h5>
-       </div>
-
-        <div class="small-3 columns">
-            <span class="right">
-                <a class="th" href="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/1026016_10200117998655831_1372096621_o.jpg">
-                    <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/1026016_10200117998655831_1372096621_o-th.jpg">
-                </a>
-            </span>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="small-block-grid-12 small-pull-1 medium-pull-1 large-pull-1">
-            <span class="right">
-                <a class="th" href="#">
-                    <img src="#">
-                </a>
-            </span>
-
-            <div class="progress small-9 medium-10 large-10 small-push-2 medium-push-2 large-push-2 success primary color radius round">
-                <span class="meter" style="width: 70%">
-                </span>
-                    <ul class="inline-list small-pull-1 medium-push-2 large-push-2">
-                        <li class="left"><h6 class="small"><strong>77%</strong> Funded</h6></li>
-                        <li class="left"><h6 class="small"><strong>2</strong> Investors</h6></li>
-                    </ul>
-            </div>
-        </div>
-    </div>
-
-<!--
-    <div class="row small">
-       <div class="small-12 columns">
-            <span class="right"><h6><small><strong>$12</strong></small></h6></span>
-       </div>
-   </div>
--->
-
-    <div class="card-bottom">
-        <div class="row large">
-            <div class="small-3 medium-3 large-3 columns">
-                <a class="th charity" href="#">
-                    <img src="http://placehold.it/48x28&amp;text=[img]">
-                </a>
-            </div>
-                <a href="#" class="button success right tiny corner-button">Join Project →  </a>
-        </div>
-    </div>
-</div>
-
+<% end %>
