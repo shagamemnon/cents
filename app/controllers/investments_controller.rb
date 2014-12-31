@@ -9,7 +9,7 @@ class InvestmentsController < ApplicationController
     @investment = @project.investments.new(amount: amount)
     @investment.duration = 5
     @investment.save!
-    binding.pry
+    Investment.first_investment(@project, amount)
     redirect_to user_path(@project.user_id)
   end
 
