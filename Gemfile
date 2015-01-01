@@ -55,6 +55,9 @@ gem 'omniauth-facebook'
 # Cron Jobs
 gem 'whenever', :require => false
 
+# Processing Payments with Stripe
+gem 'stripe'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
