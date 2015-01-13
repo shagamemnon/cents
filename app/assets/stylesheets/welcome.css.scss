@@ -3,9 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .mission {
-  margin-top: 1em;
+  margin-top: 2em;
+}
+  h5 {
+    color: white;
+  }
+
+.start-project-button {
+  margin-top: 2.0em;
 }
 
-.how-it-works-button {
-  margin-top: 1em;
+.card {
+  padding: 0 1.0em 0 1.0em;
+}
+
+.card-subheader {
+  font-weight: 200;
+  color: gray;
+  margin-top: 0.5rem;
+  line-height: 1.17;
+}
+
+.project-progress {
+  border-bottom: 1px grey;
+  border-bottom-style: dotted;
+  margin-bottom: 0.5em;
+}
+
+.progress {
+  margin-top: 1.0em;
+}
+
+.card {
+  background-color: #fafeff;
+  margin-bottom: 0.8em;
 }

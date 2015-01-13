@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :projects, shallow: true
   end
 
+  resources :payments, only: [:new, :create]
+
   get '/howitworks', to: 'welcome#how_it_works'
   get '/explore', to: 'projects#index'
 end
