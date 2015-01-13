@@ -1,5 +1,6 @@
 class Investment < ActiveRecord::Base
-  belongs_to :projects
+  belongs_to :project
+  has_one :user, through: :project
 
   def self.first_investment(project, investment)
     total = project.funded.to_f + investment
@@ -15,8 +16,14 @@ class Investment < ActiveRecord::Base
     end
     project_ids.each_with_index do |id, index|
       project = Project.find(id)
-      total = project.funded.to_f + inv_amounts[index]
-      project.update(funded: total)
+      funding_diff = project.monetary_goal - project.funded
+      if funding_diff < 0.99
+        total = project.funded.to_f + funding_diff
+        project.update(funded: total, completed: true)
+      else
+        total = project.funded.to_f + inv_amounts[index]
+        project.update(funded: total)
+      end
     end
   end
 end
