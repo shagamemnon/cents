@@ -1,57 +1,70 @@
 <div class="row mission">
-    <div class="text-center small-offset-2 small-8  large-offset-4 large-4">
-        <h6>This is our mission, what we're about, why we exist!</h6>
+    <div class="text-center small-offset-2 small-8 large-offset-4 large-4">
+        <h5>Fund $10-$15 projects across the globe with 99¢ or less per day.</h5>
     </div>
 </div>
 
-<div class="row how-it-works-button">
-  <div class="small-4 small-offset-4 large-4 large-offset-4 columns">
-    <%= link_to 'How It Works', howitworks_path, class: 'button radius tiny' %>
-  </div>
+<div class="row start-project-button">
+    <div class="small-4 small-offset-4 large-4 large-offset-4 columns">
+        <%= link_to 'Start a Project', howitworks_path, class: 'button radius tiny' %>
+    </div>
 </div>
+
+<!-- The Card Starts Here -->
 <% @projects.each do |project| %>
-    <div class="cards-container">
-        <div class="card">
-            <div class="row">
-                <div class="small-9 half medium-8 large-8 columns">
-                    <h4 class="small"><strong><%= project.title %></strong></h4>
-                    <h5 class="small"><%= project.short_desc %></h5>
-                </div>
-
-                <div class="small-3 columns">
-                    <span class="right">
-                        <%= image_tag(project.user.image) %>
-                    </span>
+    <div class="card">
+        <div class="row">
+            <div class="small-9 columns">
+                <h6>
+                    <strong><%= link_to 'Communication App',  %>Communication App</strong>
+                </h6>
+                <div class="card-subheader">
+                    Frank's sending a mine detection dog to Iraq.
                 </div>
             </div>
-            <div class="row">
-                <div class="small-12 medium-12 large-12 columns">
-                    <span class="right">
-                        <a href="#" class="th projicon">
-                            <img src="http://placehold.it/30x30&amp;text=[img]">
-                            <h6 class="project text-center"><strong>$12</strong></h6>
-                        </a>
-                    </span>
 
-                    <div class="progress small-10 medium-11 large-11 success primary color radius round">
-                        <span class="meter" style="width: 70%">
-                        </span>
-                        <ul class="inline-list small-pull-1 medium-push-2 large-push-2 columns">
-                            <li class="left"><h6 class="small text-center">Investors<br><strong>2</strong></h6></li>
-                            <li class="left"><h6 class="small text-center">Funded<br><strong>77%</strong></h6></li>
-                        </ul>
-                    </div>
+            <div class="small-3 columns">
+                <span class="right">
+                    <%= link_to image_tag(project.user.image) %>
+                </span>
+            </div>
+        </div>
+
+        <div class="row project-progress">
+            <div class="small-12 columns">
+                <div class="progress small-12 radius round">
+                    <span class="meter" style="width: 70%"></span>
+                    <ul class="small-block-grid-3">
+                        <li>
+                            <h5 class="text-center">
+                                <small>Investors<br><strong>4</strong></small>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-center">
+                                <small>Funded<br><strong>51%</strong></small>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-center"><small>Goal<br><strong>$14</strong></small>
+                            </h5>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="card-bottom">
-                <div class="row large">
-                    <div class="small-3 medium-3 large-3 columns">
-                        <a class="th charity" href="#">
-                            <img src="http://placehold.it/50x30&amp;text=[img]">
-                        </a>
-                    </div>
-                    <a href="#" class="button success right tiny corner-button">Join Project →  </a>
-                </div>
+        </div>
+
+
+        <div class="row card-bottom">
+            <div class="small-6 columns">
+                <span class='left'>
+                    <%= link_to image_tag('ocean_conservancy_logo.gif') %>
+                </span>
+            </div>
+            <div class='small-6 columns'>
+                <span class='right'>
+                    <%= link_to 'Join Project', new_project_investment_path(project.id), class: 'button radius tiny' %>
+                </span>
             </div>
         </div>
     </div>
