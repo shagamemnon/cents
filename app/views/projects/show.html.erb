@@ -1,24 +1,17 @@
-<div class="header-photo">
-  <img src="img/replant-rainforest-1.jpg">
+<div class="row">
+  <div class="small-3 small-centered columns">
+    <%= link_to image_tag(@user_project.user.image) %>
+  </div>
+  <div class="small-5 small-centered columns">
+    <h6>and <%= @user_project.investments.count %> others</h6>
+  </div>
 </div>
 
-<div class="cards-container">
-  <div class="project-page-card">
-    <div class="row">
-      <div class="small-12 medium-12 large-12 columns">
-        <a href="#">
-          <center>
-            <img class="project-page-icon-container" src="img/tree_icon.gif">
-          </center>
-        </a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-12 medium-12 large-12 columns">
-        <h5 class="text-center"><strong>140 Euterpe Trees in the Amazon<small><br>By </strong>Nature Conservancy</small></h5>
-      </div>
-    </div>
+<div class="row">
+  <% @user_project.investments.each do |inv| %>
+    <div class="small-2 small-centered project-contributors columns"><%= image_tag(inv.user.image) %></div>
+  <% end %>
+</div>
 
     <div class="row">
       <div class="progress small-12 medium-12 large-12 success primary color radius round">
@@ -81,5 +74,3 @@
       </div>
     </div>
   </div>
-</div>
-</div>

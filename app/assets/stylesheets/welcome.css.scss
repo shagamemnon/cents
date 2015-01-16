@@ -2,9 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.mission {
-  margin-top: 2em;
+#welcome-page-background {
+  background-color: #4FCC99;
 }
+
+.mission {
+  padding-top: 2em;
+}
+
   h5 {
     color: white;
   }

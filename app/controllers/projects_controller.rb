@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @user_project = Project.find(params[:id])
   end
 
   def new

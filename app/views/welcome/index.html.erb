@@ -1,71 +1,75 @@
-<div class="row mission">
-    <div class="text-center small-offset-2 small-8 large-offset-4 large-4">
-        <h5>Fund $10-$15 projects across the globe with 99¢ or less per day.</h5>
+<section id="welcome-page-background">
+    <div class="row mission">
+        <div class="text-center small-offset-2 small-8 large-offset-4 large-4">
+            <h5>Fund $10-$15 projects across the globe with 99¢ or less per day.</h5>
+        </div>
     </div>
-</div>
 
-<div class="row start-project-button">
-    <div class="small-4 small-offset-4 large-4 large-offset-4 columns">
-        <%= link_to 'Start a Project', howitworks_path, class: 'button radius tiny' %>
+    <div class="row start-project-button">
+        <div class="small-4 small-offset-4 large-4 large-offset-4 columns">
+            <%= link_to 'Start a Project', howitworks_path, class: 'button radius tiny' %>
+        </div>
     </div>
-</div>
 
-<!-- The Card Starts Here -->
-<% @projects.each do |project| %>
-    <div class="card">
-        <div class="row">
-            <div class="small-9 columns">
-                <h6>
-                    <strong><%= link_to 'Communication App', project_path(project) %></strong>
-                </h6>
-                <div class="card-subheader">
-                    Frank's sending a mine detection dog to Iraq.
+    <!-- The Card Starts Here -->
+    <% @projects.each do |project| %>
+        <%= link_to project_path(project) do %>
+            <div class="card">
+                <div class="row">
+                    <div class="small-9 columns">
+                        <h6>
+                            <strong><%= project.title %></strong>
+                        </h6>
+                        <div class="card-subheader">
+                            <%= project.short_desc %>
+                        </div>
+                    </div>
+
+                    <div class="small-3 columns">
+                        <span class="right">
+                            <%= image_tag(project.user.image) %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row project-progress">
+                    <div class="small-12 columns">
+                        <div class="progress small-12 radius round">
+                            <span class="meter" style="width: 70%"></span>
+                            <ul class="small-block-grid-3">
+                                <li>
+                                    <h5 class="text-center">
+                                        <small>Investors<br><strong>4</strong></small>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <h5 class="text-center">
+                                        <small>Funded<br><strong>51%</strong></small>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <h5 class="text-center"><small>Goal<br><strong>$14</strong></small>
+                                    </h5>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row card-bottom">
+                    <div class="small-6 columns">
+                        <span class='left'>
+                            <%= link_to image_tag('ocean_conservancy_logo.gif') %>
+                        </span>
+                    </div>
+                    <div class='small-6 columns'>
+                        <span class='right'>
+                            <%= link_to 'Join Project', new_project_investment_path(project.id), class: 'button radius tiny' %>
+                        </span>
+                    </div>
                 </div>
             </div>
-
-            <div class="small-3 columns">
-                <span class="right">
-                    <%= link_to image_tag(project.user.image) %>
-                </span>
-            </div>
-        </div>
-
-        <div class="row project-progress">
-            <div class="small-12 columns">
-                <div class="progress small-12 radius round">
-                    <span class="meter" style="width: 70%"></span>
-                    <ul class="small-block-grid-3">
-                        <li>
-                            <h5 class="text-center">
-                                <small>Investors<br><strong>4</strong></small>
-                            </h5>
-                        </li>
-                        <li>
-                            <h5 class="text-center">
-                                <small>Funded<br><strong>51%</strong></small>
-                            </h5>
-                        </li>
-                        <li>
-                            <h5 class="text-center"><small>Goal<br><strong>$14</strong></small>
-                            </h5>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row card-bottom">
-            <div class="small-6 columns">
-                <span class='left'>
-                    <%= link_to image_tag('ocean_conservancy_logo.gif') %>
-                </span>
-            </div>
-            <div class='small-6 columns'>
-                <span class='right'>
-                    <%= link_to 'Join Project', new_project_investment_path(project.id), class: 'button radius tiny' %>
-                </span>
-            </div>
-        </div>
-    </div>
-<% end %>
+        <% end %>
+    <% end %>
+</section>
