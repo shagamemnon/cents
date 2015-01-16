@@ -3,13 +3,13 @@
     <%= link_to image_tag(@user_project.user.image) %>
   </div>
   <div class="small-5 small-centered columns">
-    <h6>and <%= @user_project.investments.count %> others</h6>
+    <h6><center>and <%= @user_project.investments.count %> others<center></h6>
   </div>
 </div>
 
-<div class="row">
+<div class="row project-contributors">
   <% @user_project.investments.each do |inv| %>
-    <div class="small-2 small-centered project-contributors columns"><%= image_tag(inv.user.image) %></div>
+    <div class="small-2 small-offset-1 left columns"><%= image_tag(inv.user.image) %></div>
   <% end %>
 </div>
 

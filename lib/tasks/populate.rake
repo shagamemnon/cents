@@ -15,10 +15,10 @@ namespace :db do
         project.user_id = user.id
         project.monetary_goal = [16, 18, 20]
         project.created_at = 2.years.ago..Time.now
-        project.title = Populator.words(2..4).titleize
+        project.title = Populator.words(2..3).titleize
         project.short_desc = Populator.words(10..15)
         project.long_desc = Populator.sentences(4..5)
-        Investment.populate 2 do |investment|
+        Investment.populate 3 do |investment|
           investment.project_id = project.id
           investment.amount = [0.37, 0.78, 0.99]
           investment.duration = 5

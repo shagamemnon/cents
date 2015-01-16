@@ -35,7 +35,7 @@
                 <div class="row project-progress">
                     <div class="small-12 columns">
                         <div class="progress small-12 radius round">
-                            <span class="meter" style="width: 70%"></span>
+                            <span class="meter" style="width: " + <%= project.percentage_complete.round(1).to_s %> + "%"></span>
                             <ul class="small-block-grid-3">
                                 <li>
                                     <h5 class="text-center">
